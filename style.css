@@ -1,0 +1,269 @@
+
+#app-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#status-output {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 15px;
+  background-color: #e0f7fa;
+}
+
+#control-panel button,
+#control-panel a {
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block; /* Ensure anchor tag acts like a button */
+}
+
+/* --- Task 2 Requirement: The Hiding Class --- */
+/* This class must be defined to enable the toggle functionality later. */
+.hidden {
+  /* Sets the element to be completely invisible and not take up space. */
+  display: none;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+/* Extra Feature 2: Let the user click a list item to highlight it (like marking it as important). */ 
+/*-----------------------------------------------------------------------------------------------------*/
+.highlighted {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ================================
+    Visual Enhancements
+   ================================ */
+
+/* Softer page background and spacing */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  padding-top: 60px;
+
+  /* Deep blue / cyan gradient */
+  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 40%, #38bdf8 100%);
+  background-attachment: fixed; /* keeps gradient in place when scrolling */
+}
+
+/* Slightly larger, softer card */
+#app-container {
+  max-width: 720px;
+  padding: 28px 36px;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
+/* Center the main title a bit more nicely */
+#main-title {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+/* Align the toggle link + timer button nicely */
+#control-panel {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Toggle link styling */
+#toggle-button {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#toggle-button:hover {
+  text-decoration: underline;
+}
+
+/* General button look (including Start Timer) */
+button,
+#timer-button {
+  border: none;
+  background-color: #e5e7eb;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease,
+    box-shadow 0.15s ease;
+}
+
+button:hover,
+#timer-button:hover {
+  background-color: #d1d5db;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
+}
+
+button:active,
+#timer-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Nicer status panel look */
+#status-output {
+  background-color: #e0f2fe;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+/* Slight spacing on list items */
+#item-list li {
+  margin-bottom: 4px;
+}
+
+/* hover effect for list items */
+#item-list li:hover {
+  opacity: 0.8;
+}
+
+/* Glassy card look */
+#app-container {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+}
+
+/* Stronger title with gradient underline */
+#main-title {
+  letter-spacing: 0.03em;
+}
+
+#main-title::after {
+  content: "";
+  display: block;
+  width: 160px;
+  height: 3px;
+  margin: 12px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+}
+
+/* Section heading styling (e.g., "Item List") */
+h2 {
+  font-size: 1.3rem;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+/* Give the status panel more presence */
+#status-output {
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+  border-left: 4px solid #0ea5e9;
+}
+
+/* Make the list feel like its own card */
+#item-list {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 12px 20px 12px 32px;
+  box-shadow: 0 6px 15px rgba(15, 23, 42, 0.08);
+}
+
+/* Item links more colorful and interactive */
+#item-list a {
+  color: #1d4ed8;
+}
+
+#item-list a:hover {
+  color: #0f766e;
+}
+
+/* Make highlighted list items really pop */
+.highlighted {
+  color: #be123c;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Slight hover lift on the main card */
+#app-container {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+#app-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.45);
+}
+
+/* Animated gradient under the title */
+#main-title::after {
+  background-size: 220% 100%;
+  animation: title-shimmer 3s linear infinite;
+}
+
+@keyframes title-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Make the Start Timer button stand out */
+#timer-button {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #f9fafb;
+  font-weight: 600;
+}
+
+#timer-button:hover {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+/* Nicer look for the status counter & timestamps */
+#status-counter {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+#status-output span {
+  display: inline-block;
+  margin-right: 6px;
+  margin-top: 4px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background-color: rgba(15, 23, 42, 0.06);
+  font-size: 0.82rem;
+}
+
+/* Make bullets and links feel more intentional */
+#item-list li::marker {
+  color: #6366f1;
+}
+
+#item-list a {
+  font-weight: 500;
+}
+
+#item-list a:hover {
+  color: #0f766e;
+}
+
+/* Make sure the timer can truly hide the control panel */
+#control-panel.hidden {
+  display: none;
+}
